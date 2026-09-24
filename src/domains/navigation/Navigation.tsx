@@ -1,11 +1,11 @@
-import { NavLink } from 'react-router-dom'
-import './navigation.css'
+import { NavLink } from 'react-router-dom';
+import './navigation.css';
 
 const navigationItems = [
   { to: '/map', label: 'Карта' },
   { to: '/encyclopedia', label: 'Энциклопедия' },
   { to: '/info', label: 'О проекте' },
-]
+];
 
 export const Navigation = () => {
   return (
@@ -25,5 +25,5 @@ export const Navigation = () => {
         ))}
       </ul>
     </nav>
-  )
-}
+  );
+};
