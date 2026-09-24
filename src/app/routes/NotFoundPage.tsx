@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-export function NotFoundPage() {
+export const NotFoundPage = () => {
   return (
     <section className="page-section">
       <p className="eyebrow">404</p>
@@ -10,5 +10,5 @@ export function NotFoundPage() {
         Перейти к карте
       </Link>
     </section>
-  )
-}
+  );
+};

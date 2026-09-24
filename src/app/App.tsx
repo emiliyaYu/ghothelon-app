@@ -1,12 +1,12 @@
-import { Navigate, Route, Routes } from 'react-router-dom'
-import { AppLayout } from './layout/AppLayout.tsx'
-import { ErrorBoundary } from './providers/ErrorBoundary.tsx'
-import { NotFoundPage } from './routes/NotFoundPage.tsx'
-import { EncyclopediaPage } from './routes/EncyclopediaPage.tsx'
-import { InfoPage } from './routes/InfoPage.tsx'
-import { MapPage } from './routes/MapPage.tsx'
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { AppLayout } from './layout/AppLayout.tsx';
+import { ErrorBoundary } from './providers/ErrorBoundary.tsx';
+import { NotFoundPage } from './routes/NotFoundPage.tsx';
+import { EncyclopediaPage } from './routes/EncyclopediaPage.tsx';
+import { InfoPage } from './routes/InfoPage.tsx';
+import { MapPage } from './routes/MapPage.tsx';
 
-export function App() {
+export const App = () => {
   return (
     <ErrorBoundary>
       <AppLayout>
@@ -19,5 +19,5 @@ export function App() {
         </Routes>
       </AppLayout>
     </ErrorBoundary>
-  )
-}
+  );
+};

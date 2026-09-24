@@ -2,6 +2,7 @@ import js from '@eslint/js';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import prettier from 'eslint-config-prettier';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
+import noRelativeImportPaths from 'eslint-plugin-no-relative-import-paths';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
@@ -42,22 +43,20 @@ export default defineConfig([
       jsxA11y.flatConfigs.recommended,
       reactRefresh.configs.vite,
     ],
+    plugins: {
+      'no-relative-import-paths': noRelativeImportPaths,
+    },
     settings: {
       react: {
         version: 'detect',
       },
     },
     rules: {
-      'no-restricted-imports': [
+      // Auto-fixable: rewrites relative imports into the @/ alias.
+      // allowSameFolder keeps ./file imports within the same directory.
+      'no-relative-import-paths/no-relative-import-paths': [
         'error',
-        {
-          patterns: [
-            {
-              group: ['..', '../**'],
-              message: 'Используй alias @/ для импортов из родительских директорий.',
-            },
-          ],
-        },
+        { allowSameFolder: true, rootDir: 'src', prefix: '@' },
       ],
       'react/function-component-definition': [
         'error',

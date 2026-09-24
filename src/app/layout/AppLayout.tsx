@@ -1,13 +1,13 @@
-import type { ReactNode } from 'react'
-import { Link } from 'react-router-dom'
-import { Navigation } from '@/domains/navigation'
-import './app-layout.css'
+import type { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
+import { Navigation } from '@/domains/navigation';
+import './app-layout.css';
 
 type AppLayoutProps = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
-export function AppLayout({ children }: AppLayoutProps) {
+export const AppLayout = ({ children }: AppLayoutProps) => {
   return (
     <div className="app-layout">
       <a className="skip-link" href="#main-content">
@@ -26,5 +26,5 @@ export function AppLayout({ children }: AppLayoutProps) {
       </main>
       <footer className="app-footer">Интерактивная карта мира Ghothelon</footer>
     </div>
-  )
-}
+  );
+};
