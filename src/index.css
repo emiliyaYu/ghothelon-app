@@ -1,0 +1,24 @@
+:root {
+  font-family: system-ui, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  color: #49473f;
+  background: #f8f5ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+}
+a {
+  color: #365e40;
+}
+:focus-visible {
+  outline: 3px solid #9a5a32;
+  outline-offset: 4px;
+}

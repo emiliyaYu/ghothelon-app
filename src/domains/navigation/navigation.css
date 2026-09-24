@@ -1,0 +1,22 @@
+.navigation-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navigation-link {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: #706b60;
+  text-decoration: none;
+}
+
+.navigation-link:hover,
+.navigation-link--active {
+  background: #eee8dc;
+  color: #2f3b2f;
+}

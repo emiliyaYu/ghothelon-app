@@ -1,0 +1,9 @@
+commit_file="$1"
+commit_subject=$(sed -n '1p' "$commit_file")
+
+if ! printf '%s\n' "$commit_subject" | grep -Eq '^(feat|fix|docs|style|refactor|test|build|ci|chore|perf|revert)(\([a-z0-9._/-]+\))?!?: .+'; then
+  echo "Invalid commit message. Use Conventional Commits, for example:"
+  echo "  feat(map): add map shell"
+  echo "  fix(navigation): preserve active route"
+  exit 1
+fi
