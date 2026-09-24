@@ -1,0 +1,27 @@
+:root {
+  /* Базовая палитра */
+  --color-background: #0d0b08;
+  --color-foreground: #e2d5be;
+  --color-primary-dark: #c4976a;
+  --color-primary-foreground: #0d0b08;
+  --color-primary: #d4a87a;
+  --color-secondary: #1c1812;
+  --color-secondary-foreground: #c8b99a;
+  --color-muted: #1c1812;
+  --color-muted-foreground: #7a6e5e;
+  --color-accent: #9a7a52;
+  --color-border: #2a2419;
+  --color-ring: #c4976a;
+
+  /* Семейства шрифтов */
+  --font-display: 'Playfair Display', georgia, 'Times New Roman', serif;
+  --font-body: 'Lora', georgia, 'Times New Roman', serif;
+  --font-mono-enc: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  /* Радиусы */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+
+  /* Фокус (согласуется с :focus-visible в index.css) */
+  --focus-ring: var(--color-ring);
+}

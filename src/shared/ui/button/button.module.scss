@@ -1,0 +1,71 @@
+@use '../../styles/mixins' as *;
+
+.button {
+  cursor: pointer;
+
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 24px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+
+  color: var(--color-primary-foreground);
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+
+  &:focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 3px;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  @include mono-label;
+}
+
+.icon {
+  display: inline-flex;
+  width: 1.1em;
+  height: 1.1em;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.label {
+  // Метка кнопки в стиле энциклопедических меток (JetBrains Mono).
+  @include mono-label(inherit);
+
+  line-height: 1;
+}
+
+// Светлый вариант — сплошная «карамельная» заливка.
+.light {
+  background: var(--color-primary-dark);
+
+  &:hover:not(:disabled) {
+    background: var(--color-primary);
+  }
+}
+
+// Тёмный вариант — «призрачная» кнопка с рамкой.
+.dark {
+  border-color: var(--color-border);
+  color: var(--color-foreground);
+  background: var(--color-primary-foreground);
+
+  &:hover:not(:disabled) {
+    border-color: var(--color-accent);
+  }
+}
