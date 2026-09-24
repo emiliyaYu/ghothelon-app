@@ -1,5 +1,5 @@
 /** @type {import('@ladle/react').UserConfig} */
-import path from "path";
+import path from 'path';
 
 export default {
   viteConfig: path.join(process.cwd(), '.ladle', 'vite.ladle.config.ts'),
