@@ -29,7 +29,11 @@ export default defineConfig([
     },
   },
   {
-    files: ['*.{js,mjs,cjs,ts,mts,cts}', 'src/test/**/*.{ts,tsx}'],
+    files: [
+      '*.{js,mjs,cjs,ts,mts,cts}',
+      '.ladle/**/*.{js,mjs,cjs,ts,tsx}',
+      'src/test/**/*.{ts,tsx}',
+    ],
     languageOptions: {
       globals: globals.node,
     },
@@ -75,6 +79,13 @@ export default defineConfig([
     rules: {
       // TypeScript checks component props instead of runtime PropTypes.
       'react/prop-types': 'off',
+    },
+  },
+  {
+    // Story-файлы экспортируют не только компоненты (title, args и т.п.).
+    files: ['**/*.stories.{ts,tsx}'],
+    rules: {
+      'react-refresh/only-export-components': 'off',
     },
   },
   // Formatting is enforced by Prettier through format:check.

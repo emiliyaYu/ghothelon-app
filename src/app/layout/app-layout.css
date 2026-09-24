@@ -1,7 +1,7 @@
 .app-layout {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 .app-header {
@@ -10,33 +10,34 @@
 }
 
 .app-header__inner {
-  width: min(1120px, calc(100% - 32px));
-  margin: 0 auto;
-  min-height: 72px;
   display: flex;
+  gap: 24px;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+
+  width: min(1120px, calc(100% - 32px));
+  min-height: 72px;
+  margin: 0 auto;
 }
 
 .app-brand {
-  color: #2f3b2f;
-  font-weight: 700;
   font-size: 1.25rem;
+  font-weight: 700;
+  color: #2f3b2f;
   text-decoration: none;
 }
 
 .app-main {
+  flex: 1;
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
-  flex: 1;
 }
 
 .app-footer {
   padding: 24px 16px;
+  font-size: 0.875rem;
   color: #706b60;
   text-align: center;
-  font-size: 0.875rem;
 }
 
 .page-section {
@@ -55,25 +56,29 @@
 }
 
 .eyebrow {
-  color: #9a5a32;
   font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  color: #9a5a32;
   text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 
 .button-link,
 .error-page button {
+  cursor: pointer;
+
   display: inline-block;
+
   margin-top: 24px;
   padding: 10px 16px;
   border: 0;
   border-radius: 6px;
-  background: #2f3b2f;
-  color: #fffdf8;
-  cursor: pointer;
+
   font: inherit;
+  color: #fffdf8;
   text-decoration: none;
+
+  background: #2f3b2f;
 }
 
 .error-page {

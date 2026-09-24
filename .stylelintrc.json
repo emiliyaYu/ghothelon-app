@@ -1,0 +1,33 @@
+{
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-clean-order"],
+  "rules": {
+    "selector-class-pattern": [
+      "^[a-z][a-z0-9]*(-[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?$",
+      {
+        "message": "Классы в глобальных стилях пишутся в kebab-case / BEM (например, page-section, card__title, card--active)"
+      }
+    ],
+    "custom-property-pattern": [
+      "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
+      {
+        "message": "CSS-переменные пишутся в kebab-case (например, --color-primary)"
+      }
+    ],
+    "scss/dollar-variable-pattern": "^[a-z][a-zA-Z0-9]*$",
+    "declaration-empty-line-before": null,
+    "color-hex-length": "long"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.module.{css,scss}"],
+      "rules": {
+        "selector-class-pattern": [
+          "^[a-z][a-zA-Z0-9]+$",
+          {
+            "message": "Классы CSS Modules пишутся в camelCase (например, pageTitle)"
+          }
+        ]
+      }
+    }
+  ]
+}
