@@ -1,73 +1,58 @@
-# React + TypeScript + Vite
+# Ghothelon 🐲
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🗺️ Интерактивная карта вымышленного мира Ghothelon с энциклопедией — статьями о городах,
+странах, реках, регионах, персонажах и событиях этого мира.
 
-Currently, two official plugins are available:
+Проект переписывается с нуля на современный стек. Текущий репозиторий содержит новую
+основу приложения; миграция карты и контента выполняется поэтапно.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Возможности
 
-## React Compiler
+- Интерактивная карта мира на растровых тайлах.
+- Маркеры, подписи регионов и всплывающие карточки объектов.
+- Энциклопедия со статьями об объектах и сущностях мира.
+- Навигация между картой, энциклопедией и справочными разделами.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Разделы дополняются по мере развития проекта.
 
-## Expanding the ESLint configuration
+## Стек
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| Назначение          | Технология              |
+| ------------------- | ----------------------- |
+| UI                  | React 19                |
+| Язык                | TypeScript              |
+| Сборка и dev-сервер | Vite                    |
+| Маршрутизация       | React Router            |
+| Карта               | OpenLayers              |
+| Тесты               | Vitest, Testing Library |
+| Качество кода       | ESLint, Prettier        |
+| Git-хуки            | Husky, lint-staged      |
+| CI                  | GitHub Actions          |
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Архитектура
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Приложение построено по доменно-ориентированной модульной архитектуре:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```text
+src/
+├── app/          Оболочка приложения: layout, роутинг, провайдеры
+├── domains/      Бизнес-домены: world, map, encyclopedia, navigation
+├── shared/       Переиспользуемый код: UI-примитивы, стили, утилиты
+└── test/         Общие настройки и вспомогательные средства тестов
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Направление зависимостей: `app → domains → shared`. Каждый домен предоставляет
+публичный API; внутренние файлы домена напрямую не импортируются.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+Контент энциклопедии хранится отдельно от кода приложения в независимом
+контентном репозитории.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+## Быстрый старт
+
+```bash
+npm install
+npm run dev
 ```
+
+Подробнее о командах, соглашениях и процессе разработки — в
+[CONTRIBUTING.md](./CONTRIBUTING.md).
