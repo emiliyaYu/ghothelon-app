@@ -16,9 +16,12 @@
     "build": "npm run typecheck && vite build",
     "quality": "npm run typecheck && npm run lint && npm run format:check && npm run test:run && npm run build",
     "prepare": "husky",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "ladle": "ladle serve",
+    "ladle:build": "ladle build"
   },
   "dependencies": {
+    "@ladle/react": "^5.1.1",
     "ol": "^10.10.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
