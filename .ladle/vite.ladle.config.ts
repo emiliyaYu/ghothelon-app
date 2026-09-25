@@ -5,6 +5,10 @@ export default defineConfig({
   plugins: [],
   server: {
     open: true,
+    watch: {
+      usePolling: true,
+      interval: 300,
+    },
   },
   resolve: {
     alias: {

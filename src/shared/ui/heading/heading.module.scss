@@ -1,0 +1,49 @@
+@use '../../styles/mixins' as *;
+
+.heading {
+  // Базовые свойства заголовка (семейство, вес, line-height) из миксина.
+  @include page-title;
+}
+
+// Размер переопределяет только font-size поверх базового миксина.
+.sizeXs {
+  font-size: var(--font-size-heading-xs);
+}
+
+.sizeS {
+  font-size: var(--font-size-heading-s);
+}
+
+.sizeM {
+  font-size: var(--font-size-heading-m);
+}
+
+.sizeL {
+  font-size: var(--font-size-heading-l);
+}
+
+.sizeXl {
+  font-size: var(--font-size-heading-xl);
+}
+
+// Цвет заголовка из токенов. Задаётся опционально поверх наследуемого.
+.colorForeground {
+  color: var(--color-foreground);
+}
+
+.colorPrimary {
+  color: var(--color-primary);
+}
+
+.colorAccent {
+  color: var(--color-accent);
+}
+
+.colorSubtle {
+  color: var(--color-subtle);
+}
+
+// Курсивное начертание.
+.italic {
+  font-style: italic;
+}

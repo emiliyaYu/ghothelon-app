@@ -1,0 +1,56 @@
+@use '../../styles/mixins' as *;
+
+.card {
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: 100%;
+  height: 126px;
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  text-align: left;
+
+  background: var(--color-primary-foreground);
+
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: var(--color-accent);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 3px;
+  }
+}
+
+.icon {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  color: var(--color-primary);
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.title {
+  margin-top: auto;
+  margin-bottom: 4px;
+  color: var(--color-foreground);
+
+  @include card-title(16px);
+}
+
+.description {
+  color: var(--color-muted-foreground);
+
+  @include mono-label(12px);
+}

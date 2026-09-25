@@ -1,0 +1,46 @@
+@use '../../styles/mixins' as *;
+
+.link {
+  cursor: pointer;
+
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+
+  color: var(--color-accent);
+  text-decoration: none;
+
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: var(--color-primary);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 3px;
+  }
+}
+
+.icon {
+  display: inline-flex;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Размер s — компактная ссылка (12px).
+.sizeS {
+  @include mono-label(12px);
+
+  text-transform: none;
+}
+
+// Размер m — стандартная ссылка (14px).
+.sizeM {
+  @include mono-label(14px);
+
+  text-transform: none;
+}

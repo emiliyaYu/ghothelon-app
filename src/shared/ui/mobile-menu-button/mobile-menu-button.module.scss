@@ -1,0 +1,51 @@
+.button {
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 4px;
+  border: 0;
+
+  color: var(--color-primary);
+
+  background: transparent;
+
+  &:focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+}
+
+.icon {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.iconLayer {
+  position: absolute;
+  inset: 0;
+  transform: rotate(-90deg) scale(0.7);
+
+  display: inline-flex;
+
+  opacity: 0;
+
+  transition:
+    opacity 180ms ease,
+    transform 220ms ease;
+}
+
+.iconLayerVisible {
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iconLayer {
+    transition: none;
+  }
+}
