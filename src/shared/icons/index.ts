@@ -6,3 +6,5 @@ export { DiamondIcon } from './diamond-icon';
 export { BullseyeIcon } from './bullseye-icon';
 export { HalfCircleIcon } from './half-circle-icon';
 export { ArrowRightIcon } from './arrow-right-icon';
+export { CloseIcon } from './close-icon';
+export { MenuIcon } from './menu-icon';

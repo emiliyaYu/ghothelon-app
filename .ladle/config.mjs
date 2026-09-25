@@ -6,16 +6,14 @@ export default {
   // Автоматически открывать каталог компонентов в новой вкладке браузера.
   // Возможные значения: 'tab' | 'window' | 'cross-tab' | 'none'.
   open: 'tab',
+  // Тёмная тема интерфейса Ladle по умолчанию.
+  darkMode: {
+    default: 'dark',
+  },
   addons: {
-    // Фоны для превью: тёмная «призрачная» кнопка плохо видна на белом.
-    background: {
+    theme: {
       enabled: true,
-      defaultValue: '#1a1712',
-      options: {
-        night: '#1a1712',
-        parchment: '#f8f5ef',
-        white: '#ffffff',
-      },
+      defaultState: 'dark',
     },
   },
 };

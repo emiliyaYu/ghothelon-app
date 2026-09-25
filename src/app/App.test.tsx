@@ -20,7 +20,8 @@ function renderApp(path: string) {
 
 describe('App Shell', () => {
   it.each([
-    ['/', 'Карта мира'],
+    ['/', 'Главная'],
+    ['/main', 'Главная'],
     ['/map', 'Карта мира'],
     ['/encyclopedia', 'Энциклопедия'],
     ['/info', 'Мир Ghothelon'],
