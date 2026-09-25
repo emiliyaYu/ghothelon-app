@@ -1,5 +1,5 @@
 import type { Story, StoryDefault } from '@ladle/react';
-import { MapPinIcon } from '@/shared/ui/icon';
+import { MapPinIcon } from '@/shared/icons';
 import { Button, type ButtonProps } from './button';
 
 export default {

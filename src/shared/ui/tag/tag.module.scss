@@ -1,0 +1,37 @@
+@use '../../styles/mixins' as *;
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 2px 8px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+
+  color: var(--color-muted-foreground);
+
+  @include mono-label;
+
+  background: var(--color-background);
+
+  transition:
+    border-color 0.15s,
+    color 0.15s;
+
+  &:hover,
+  &.active {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+}
+
+// Кликабельный тег (ссылка) — курсор-указатель и видимый фокус.
+a.tag {
+  cursor: pointer;
+  text-decoration: none;
+
+  &:focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 3px;
+  }
+}

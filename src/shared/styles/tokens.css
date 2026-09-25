@@ -12,11 +12,19 @@
   --color-accent: #9a7a52;
   --color-border: #2a2419;
   --color-ring: #c4976a;
+  --color-subtle: #f0e6d0;
 
   /* Семейства шрифтов */
   --font-display: 'Playfair Display', georgia, 'Times New Roman', serif;
   --font-body: 'Lora', georgia, 'Times New Roman', serif;
   --font-mono-enc: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  /* Размеры заголовков */
+  --font-size-heading-xs: 24px;
+  --font-size-heading-s: 32px;
+  --font-size-heading-m: 44px;
+  --font-size-heading-l: 56px;
+  --font-size-heading-xl: 72px;
 
   /* Радиусы */
   --radius-sm: 2px;

@@ -2,7 +2,7 @@
 import { cleanup, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { MapPinIcon } from '@/shared/ui/icon';
+import { MapPinIcon } from '@/shared/icons';
 import { Button } from './button';
 
 afterEach(() => {
